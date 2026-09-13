@@ -1,0 +1,1048 @@
+/* ==========================================================
+   Portfolio — Jovan Faizan Ardiansyah
+   Warm, minimal, editorial. Tidak template.
+   ========================================================== */
+
+/* ── 0. Custom Properties ── */
+:root {
+    --bg: #FAFAF8;
+    --bg-alt: #F2F0EB;
+    --surface: #FFFFFF;
+    --text: #1A1A1A;
+    --text-secondary: #555248;
+    --text-muted: #8C8677;
+    --accent: #2D5A27;
+    --accent-hover: #3D7A35;
+    --warm: #8B7355;
+    --border: #E5E2DC;
+    --border-light: #EDEBE6;
+
+    --font-serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+    --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+    --container: 1100px;
+    --nav-height: 64px;
+}
+
+
+/* ── 1. Reset & Base ── */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--nav-height);
+}
+
+body {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text);
+    background-color: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Selection — personal touch */
+::selection {
+    background: #2D5A27;
+    color: #fff;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--text);
+}
+
+h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    margin-bottom: 0.5rem;
+}
+
+h4 {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.35rem;
+}
+
+p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ── 2. Layout ── */
+.container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.section-label {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+}
+
+
+/* ── 3. Navigation ── */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: var(--nav-height);
+    background: transparent;
+    transition: background 0.35s ease, box-shadow 0.35s ease;
+}
+
+.nav--scrolled {
+    background: rgba(250, 250, 248, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 1px 0 var(--border);
+}
+
+.nav__inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav__logo {
+    font-family: var(--font-sans);
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--text);
+}
+
+.nav__logo span {
+    color: var(--accent);
+}
+
+.nav__links {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav__links a {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+    position: relative;
+}
+
+.nav__links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--accent);
+    transition: width 0.25s ease;
+}
+
+.nav__links a:hover {
+    color: var(--text);
+}
+
+.nav__links a:hover::after {
+    width: 100%;
+}
+
+/* Hamburger */
+.nav__toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    width: 28px;
+    height: 28px;
+}
+
+.nav__toggle span {
+    display: block;
+    width: 100%;
+    height: 1.5px;
+    background: var(--text);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
+}
+
+.nav--open .nav__toggle span:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+}
+
+.nav--open .nav__toggle span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav--open .nav__toggle span:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+}
+
+
+/* ── 4. Hero ── */
+.hero {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    padding: calc(var(--nav-height) + 2rem) 0 4rem;
+}
+
+.hero__container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 3rem;
+    align-items: end;
+}
+
+.hero__greeting {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.hero__name {
+    font-family: var(--font-serif);
+    font-size: clamp(2.8rem, 7.5vw, 5.2rem);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--text);
+}
+
+.hero__name-first,
+.hero__name-last {
+    display: block;
+}
+
+/* Sedikit italic pada nama terakhir — sentuhan editorial */
+.hero__name-last {
+    font-style: italic;
+}
+
+.hero__aside {
+    padding-bottom: 0.5rem;
+}
+
+.hero__line {
+    width: 40px;
+    height: 1px;
+    background: var(--accent);
+    margin-bottom: 1.25rem;
+}
+
+.hero__tagline {
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+}
+
+.hero__focus {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.hero__intro {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    max-width: 360px;
+}
+
+.hero__cta {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2px;
+    transition: border-color 0.25s ease, color 0.25s ease;
+}
+
+.hero__cta:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+
+/* ── 5. About ── */
+.about {
+    padding: 7rem 0 6rem;
+    background: var(--bg);
+}
+
+.about__grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.about__photo {
+    aspect-ratio: 4 / 5;
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--bg-alt);
+    border: 1px solid var(--border-light);
+    /* Sedikit rotasi — terasa manual, bukan template */
+    transform: rotate(-1.5deg);
+    transition: transform 0.4s ease;
+}
+
+.about__photo:hover {
+    transform: rotate(0deg);
+}
+
+.about__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about__text h2 {
+    margin-bottom: 1.5rem;
+}
+
+.about__text p {
+    font-size: 0.95rem;
+}
+
+.about__now {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--bg-alt);
+    border-radius: 8px;
+    border-left: 3px solid var(--accent);
+}
+
+.about__now h3 {
+    font-size: 1rem;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--text);
+}
+
+.about__now ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.about__now li {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    padding-left: 0.25rem;
+}
+
+
+/* ── 6. Projects ── */
+.projects {
+    padding: 7rem 0;
+    background: var(--bg-alt);
+}
+
+.projects__heading {
+    margin-bottom: 0.5rem;
+}
+
+.projects__intro {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    max-width: 520px;
+    margin-bottom: 3.5rem;
+}
+
+/* Badges */
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.badge {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.3em 0.75em;
+    border-radius: 3px;
+    line-height: 1;
+}
+
+.badge--type {
+    background: var(--accent);
+    color: #fff;
+}
+
+.badge--role {
+    background: transparent;
+    color: var(--warm);
+    border: 1px solid var(--warm);
+}
+
+/* Featured Project */
+.project-featured {
+    display: grid;
+    grid-template-columns: 0.7fr 1fr;
+    gap: 2.5rem;
+    align-items: start;
+    margin-bottom: 3.5rem;
+    padding: 2rem;
+    background: var(--surface);
+    border-radius: 10px;
+    border: 1px solid var(--border-light);
+}
+
+/* Stacked variant (untuk project landscape biasa) */
+.project-featured--stacked {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.project-featured__image {
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+/* Gallery — single-image carousel untuk portrait screenshots */
+.project-gallery-wrapper {
+    position: relative;
+}
+
+.project-gallery {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar */
+.project-gallery::-webkit-scrollbar {
+    display: none;
+}
+
+.project-gallery {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Setiap item = 100% lebar container → hanya 1 gambar terlihat */
+.project-gallery__item {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.project-gallery__item img {
+    width: 100%;
+    max-height: 520px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* Arrow buttons */
+.gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s ease;
+    z-index: 2;
+}
+
+.gallery-nav:hover {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+}
+
+.gallery-nav--prev {
+    left: 6px;
+}
+
+.gallery-nav--next {
+    right: 6px;
+}
+
+/* Dot indicators */
+.gallery-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.gallery-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--border);
+    border: none;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.25s ease;
+    padding: 0;
+}
+
+.gallery-dot.active {
+    background: var(--accent);
+    transform: scale(1.25);
+}
+
+/* Landscape gallery variant */
+.project-gallery--landscape .project-gallery__item img {
+    max-height: 380px;
+    width: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.project__title {
+    font-size: clamp(1.3rem, 2.5vw, 1.65rem);
+    margin-bottom: 0.6rem;
+}
+
+.project__summary {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+}
+
+.project__narrative {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.project__block {
+    margin-bottom: 1rem;
+}
+
+.project__block p {
+    font-size: 0.9rem;
+}
+
+.project__actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0.6em 1.2em;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn--primary {
+    background: var(--accent);
+    color: #fff;
+}
+
+.btn--primary:hover {
+    background: var(--accent-hover);
+}
+
+.btn--ghost {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+.btn--ghost:hover {
+    border-color: var(--text);
+}
+
+.btn--small {
+    font-size: 0.8rem;
+    padding: 0.5em 1em;
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+}
+
+.btn--small:hover {
+    background: var(--accent);
+    color: #fff;
+}
+
+/* Project Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.project-card {
+    background: var(--surface);
+    border-radius: 10px;
+    border: 1px solid var(--border-light);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+}
+
+.project-card__body {
+    padding: 1.5rem;
+}
+
+.project-card__body .project__title {
+    font-size: 1.2rem;
+}
+
+
+/* ── 7. Experience ── */
+.experience {
+    padding: 7rem 0;
+    background: var(--bg);
+}
+
+.timeline {
+    margin-top: 3rem;
+    position: relative;
+    padding-left: 2rem;
+}
+
+/* Vertical line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 5px;
+    bottom: 8px;
+    width: 1px;
+    background: var(--border);
+}
+
+.timeline__item {
+    position: relative;
+    padding-bottom: 3rem;
+}
+
+.timeline__item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline__marker {
+    position: absolute;
+    left: -2rem;
+    top: 6px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+    z-index: 1;
+}
+
+.timeline__item:first-child .timeline__marker {
+    background: var(--accent);
+}
+
+.timeline__date {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.timeline__content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+}
+
+.timeline__org {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: 0.6rem;
+}
+
+.timeline__content p:last-child {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+
+/* ── 8. Contact ── */
+.contact {
+    padding: 7rem 0;
+    background: var(--bg-alt);
+}
+
+.contact__intro {
+    max-width: 480px;
+    margin-bottom: 2.5rem;
+}
+
+.contact__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.contact__card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 1.5rem;
+    background: var(--surface);
+    border-radius: 8px;
+    border: 1px solid var(--border-light);
+    transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.contact__card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.contact__card-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.contact__card-value {
+    font-size: 0.9rem;
+    color: var(--text);
+    font-weight: 500;
+}
+
+
+/* ── 9. Footer ── */
+.footer {
+    padding: 2.5rem 0;
+    text-align: center;
+    border-top: 1px solid var(--border);
+}
+
+.footer p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+
+/* ── 10. Placeholders ── */
+.placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    background: var(--bg-alt);
+    border: 2px dashed var(--border);
+    border-radius: 6px;
+    min-height: 200px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.placeholder small {
+    font-size: 0.7rem;
+    color: var(--border);
+}
+
+.placeholder--landscape {
+    aspect-ratio: 16 / 10;
+    min-height: unset;
+}
+
+.placeholder--card {
+    aspect-ratio: 16 / 9;
+    min-height: unset;
+}
+
+
+/* ── 11. Reveal Animation ── */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger children slightly */
+.projects-grid .reveal:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.projects-grid .reveal:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.projects-grid .reveal:nth-child(4) {
+    transition-delay: 0.25s;
+}
+
+
+/* ── 12. Responsive ── */
+@media (max-width: 900px) {
+    .hero__container {
+        grid-template-columns: 1fr;
+        align-items: start;
+        gap: 2rem;
+    }
+
+    .hero__name {
+        font-size: clamp(2.2rem, 10vw, 3.5rem);
+    }
+
+    .hero__aside {
+        padding-bottom: 0;
+    }
+
+    .about__grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .about__photo {
+        max-width: 280px;
+        transform: rotate(-1deg);
+    }
+
+    .project-featured {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .project-gallery__item img {
+        max-height: 420px;
+    }
+
+    .project__narrative {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    :root {
+        --nav-height: 56px;
+    }
+
+    .nav__toggle {
+        display: flex;
+    }
+
+    .nav__links {
+        display: none;
+        position: absolute;
+        top: var(--nav-height);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: rgba(250, 250, 248, 0.97);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        padding: 1.5rem;
+        gap: 1rem;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav--open .nav__links {
+        display: flex;
+    }
+
+    .nav__links a {
+        font-size: 1rem;
+    }
+
+    .hero {
+        min-height: 85vh;
+        min-height: 85dvh;
+    }
+
+    .hero__name {
+        font-size: clamp(2rem, 12vw, 3rem);
+    }
+
+    .about,
+    .projects,
+    .experience,
+    .contact {
+        padding: 5rem 0;
+    }
+
+    .project-featured {
+        padding: 1.25rem;
+    }
+
+    .project-card__body {
+        padding: 1.25rem;
+    }
+
+    .project-gallery__item img {
+        max-height: 360px;
+    }
+
+    .gallery-nav {
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+    }
+
+    .timeline {
+        padding-left: 1.5rem;
+    }
+
+    .timeline::before {
+        left: 3px;
+    }
+
+    .timeline__marker {
+        left: -1.5rem;
+        width: 9px;
+        height: 9px;
+    }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .about__photo {
+        transform: none;
+    }
+
+    .about__photo:hover {
+        transform: none;
+    }
+
+    .project-card:hover {
+        transform: none;
+    }
+
+    .contact__card:hover {
+        transform: none;
+    }
+}

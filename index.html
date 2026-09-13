@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jovan Faizan Ardiansyah</title>
+    <meta name="description" content="Portfolio Jovan Faizan Ardiansyah — Lifelong Learner">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300..600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ====== Navigation ====== -->
+    <nav class="nav" id="nav">
+        <div class="nav__inner">
+            <a href="#" class="nav__logo">jfa<span>.</span></a>
+            <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav__links" id="navLinks">
+                <li><a href="#tentang">Tentang</a></li>
+                <li><a href="#proyek">Proyek</a></li>
+                <li><a href="#pengalaman">Pengalaman</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ====== Hero ====== -->
+    <header class="hero" id="hero">
+        <div class="hero__container">
+            <div class="hero__main">
+                <p class="hero__greeting">Halo, saya</p>
+                <h1 class="hero__name">
+                    <span class="hero__name-first">Jovan Faizan</span>
+                    <span class="hero__name-last">Ardiansyah</span>
+                </h1>
+            </div>
+            <div class="hero__aside">
+                <div class="hero__line"></div>
+                <p class="hero__tagline">Mahasiswa Informatika · Lifelong Learner</p>
+                <p class="hero__focus">Tertarik pada data, web, dan mobile development</p>
+                <p class="hero__intro">
+                    <em>Learn constantly, Grow endlessly, Lead boldly, Impact deeply.</em>
+                </p>
+                <a href="#proyek" class="hero__cta">Lihat proyek saya ↓</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ====== About ====== -->
+    <section class="about" id="tentang">
+        <div class="container">
+            <span class="section-label reveal">01 — Tentang Saya</span>
+            <div class="about__grid">
+                <div class="about__photo-col reveal">
+                    <div class="about__photo">
+                        <img src="assets/images/foto.png" alt="Jovan Faizan Ardiansyah">
+                    </div>
+                </div>
+                <div class="about__text reveal">
+                    <h2>Sedikit tentang saya</h2>
+                    <p>
+                        Halo, aku Jovan. Aku suka belajar hal-hal baru, dan bagiku bagian
+                        paling "rewarding"nya itu justru pas hal itu ternyata bisa berguna buat orang
+                        lain. Makanya, cara belajar favoritku ya dengan mengajarkan lagi apa yang
+                        aku tahu ke orang lain.
+                    </p>
+                    <p>
+                        Sekarang aku lagi tertarik dalamin dunia data dan Machine Learning. Belakangan ini
+                        aku juga lagi bikin aplikasi mobile buat bantu produktivitas pribadi yang untuk saat ini masih
+                        saya gunakan sendiri.
+                    </p>
+                    <div class="about__now">
+                        <h3>Saat ini sedang...</h3>
+                        <ul>
+                            <li>Mengeksplorasi Bidang Data</li>
+                            <li>Develop aplikasi mobile sebagai personal project</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== Projects ====== -->
+    <section class="projects" id="proyek">
+        <div class="container">
+            <span class="section-label reveal">02 — Proyek</span>
+            <h2 class="projects__heading reveal">Yang sudah saya bangun</h2>
+            <p class="projects__intro reveal">
+                Beberapa proyek pilihan yang menunjukkan perjalanan belajar dan eksplorasi saya.
+            </p>
+
+            <!-- ── Featured Project (1) — MyDuit ── -->
+            <article class="project-featured reveal">
+                <div class="project-featured__image">
+                    <!-- Carousel gallery -->
+                    <div class="project-gallery-wrapper">
+                        <button class="gallery-nav gallery-nav--prev" aria-label="Sebelumnya">&#8249;</button>
+                        <div class="project-gallery" id="myduitGallery">
+                            <div class="project-gallery__item">
+                                <img src="assets/images/myduit-1.jpeg" alt="MyDuit - Halaman utama">
+                            </div>
+                            <div class="project-gallery__item">
+                                <img src="assets/images/myduit-2.jpeg" alt="MyDuit - Halaman riwayat">
+                            </div>
+                            <div class="project-gallery__item">
+                                <img src="assets/images/myduit-3.jpeg" alt="MyDuit - Pengaturan budget">
+                            </div>
+                            <!-- Tambah lebih banyak screenshot:
+                            <div class="project-gallery__item">
+                                <img src="assets/images/myduit-4.jpeg" alt="MyDuit - Fitur lainnya">
+                            </div>
+                            -->
+                        </div>
+                        <button class="gallery-nav gallery-nav--next" aria-label="Selanjutnya">&#8250;</button>
+                        <div class="gallery-dots" id="myduitDots"></div>
+                    </div>
+                </div>
+                <div class="project-featured__body">
+                    <div class="badges">
+                        <span class="badge badge--type">Self-initiated</span>
+                        <span class="badge badge--role">Individual</span>
+                    </div>
+                    <h3 class="project__title">MyDuit</h3>
+                    <p class="project__summary">
+                        Aplikasi mobile untuk monitoring dan mengatur keuangan pribadi.
+                        <!-- Tambahkan 1-2 kalimat lagi tentang apa yang membuat app ini spesial -->
+                    </p>
+                    <div class="project__narrative">
+                        <div class="project__block">
+                            <h4>Kontribusi Saya</h4>
+                            <p>
+                                Merancang dan membangun seluruh aplikasi dari nol. mulai dari menentukan masalah yang
+                                akan diselesaikan, desain UI/UX,
+                                implementasi fitur tracking transaksi, hingga sistem prediksi pengeluaran harian yang
+                                membantu pengguna memonitor budget secara real-time.
+                            </p>
+                        </div>
+                        <div class="project__block">
+                            <h4>Yang Saya Pelajari</h4>
+                            <p>
+                                saya mempelajari cara membuat aplikasi mobile yang simpel namun tetap menyelesaikan
+                                problem denegan tuntas, karena memang itu tujuan kita sebagai developer untuk
+                                menggunakan resource sesedikit mungkin namun memberi dampak sebanyak mungkin. saya juga
+                                banyak belajar desain UI/UX, mulai dari pemilihan layout hingga ke pemilihan warna dan
+                                logo
+                            </p>
+                        </div>
+                    </div>
+                    <div class="project__actions">
+                        <a href="https://github.com/jovanjopan/myduit" class="btn btn--primary">Source Code ↗</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ── Featured Project (2) — Landscape App ── -->
+            <article class="project-featured reveal">
+                <div class="project-featured__image">
+                    <div class="project-gallery-wrapper">
+                        <button class="gallery-nav gallery-nav--prev" aria-label="Sebelumnya">&#8249;</button>
+                        <div class="project-gallery">
+                            <div class="project-gallery__item">
+                                <img src="assets/images/project2-1.jpeg" alt="Proyek 2 - Screenshot 1">
+                            </div>
+                            <div class="project-gallery__item">
+                                <img src="assets/images/project2-2.jpeg" alt="Proyek 2 - Screenshot 2">
+                            </div>
+                            <div class="project-gallery__item">
+                                <img src="assets/images/project2-3.jpeg" alt="Proyek 2 - Screenshot 3">
+                            </div>
+                            <!-- Tambah screenshot lainnya jika perlu -->
+                        </div>
+                        <button class="gallery-nav gallery-nav--next" aria-label="Selanjutnya">&#8250;</button>
+                        <div class="gallery-dots"></div>
+                    </div>
+                </div>
+                <div class="project-featured__body">
+                    <div class="badges">
+                        <span class="badge badge--type">Class Assignment</span>
+                        <span class="badge badge--role">Individual</span>
+                    </div>
+                    <h3 class="project__title">Moodiary</h3>
+                    <p class="project__summary">
+                        Aplikasi journaling dengan asistent AI sebagai analisis suasana hati
+                    </p>
+                    <div class="project__narrative">
+                        <div class="project__block">
+                            <h4>Kontribusi Saya</h4>
+                            <p>Sebagai UI Designer dan Front-End Developer, saya bertanggung jawab merancang
+                                antarmuka yang user-friendly dan bersih, serta membangun fungsionalitas aplikasi
+                                menggunakan React Native.
+
+                                Saya juga berperan dalam
+                                mengintegrasikan API dari Google Gemini untuk memungkinkan pengguna mendapatkan analisis
+                                suasana hati secara otomatis berdasarkan
+                                entri jurnal mereka, memastikan pengalaman yang mulus antara desain dan logika aplikasi.
+                            </p>
+                        </div>
+                        <div class="project__block">
+                            <h4>Yang Saya Pelajari</h4>
+                            <p>Melalui proyek ini, saya memperdalam pemahaman saya tentang React Native dan cara
+                                membangun
+                                aplikasi lintas platform yang responsif. Selain itu, integrasi dengan Google Gemini
+                                memberikan wawasan praktis mengenai pemanfaatan AI dalam aplikasi mobile untuk
+                                menyediakan fitur cerdas dan personalisasi bagi pengguna.</p>
+                        </div>
+                    </div>
+                    <div class="project__actions">
+                        <a href="#" class="btn btn--primary">Source Code ↗</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ── Featured Project (3) — Pusara (Landscape) ── -->
+            <article class="project-featured project-featured--stacked reveal">
+                <div class="project-featured__image">
+                    <div class="project-gallery-wrapper">
+                        <button class="gallery-nav gallery-nav--prev" aria-label="Sebelumnya">&#8249;</button>
+                        <div class="project-gallery project-gallery--landscape">
+                            <div class="project-gallery__item">
+                                <img src="assets/images/pusara-1.jpeg" alt="Pusara - UI/UX Game">
+                            </div>
+                            <div class="project-gallery__item">
+                                <img src="assets/images/pusara-2.jpeg" alt="Pusara - Gameplay">
+                            </div>
+                            <div class="project-gallery__item">
+                                <img src="assets/images/pusara-3.jpeg" alt="Pusara - Fitur lainnya">
+                            </div>
+                        </div>
+                        <button class="gallery-nav gallery-nav--next" aria-label="Selanjutnya">&#8250;</button>
+                        <div class="gallery-dots"></div>
+                    </div>
+                </div>
+                <div class="project-featured__body">
+                    <div class="badges">
+                        <span class="badge badge--type">Class Assignment</span>
+                        <span class="badge badge--role">Group Project</span>
+                    </div>
+                    <h3 class="project__title">Pusara</h3>
+                    <p class="project__summary">
+                        Game horor first person dengan nuansa dan cerita yang terinspirasi dari legenda indonesia
+                    </p>
+                    <div class="project__narrative">
+                        <div class="project__block">
+                            <h4>Peran & Kontribusi Saya</h4>
+                            <p>
+                                Sebagai UI/UX Designer, saya membuat aset mentahan dan merancang UI game agar sesuai
+                                dengan nuansa horor. Saya juga berkontribusi sebagai Voice Over untuk karakter utama
+                                bernama Fahmi.
+                            </p>
+                        </div>
+                        <div class="project__block">
+                            <h4>Yang Saya Pelajari</h4>
+                            <p>
+                                Saya belajar merencanakan dan membuat antarmuka khusus untuk game, serta bagaimana
+                                mengimplementasikan desain UI tersebut secara langsung di dalam environment Unity.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="project__actions">
+                        <a href="https://drive.google.com/file/d/1g130UG86IOQDrtt2w4IvRb5IyYyyftH2/view?usp=drive_link"
+                            target="_blank" rel="noopener noreferrer" class="btn btn--primary">Dokumen 1 ↗</a>
+                        <a href="https://drive.google.com/file/d/1wz2F7-FQaSwdZoZzfwxXdYJ8ShwNaF5T/view?usp=sharing"
+                            target="_blank" rel="noopener noreferrer" class="btn btn--ghost">Dokumen 2 ↗</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ── Project Grid (4-5) ── -->
+            <div class="projects-grid">
+
+                <!-- Project 4 -->
+                <article class="project-card reveal">
+                    <div class="project-card__image">
+                        <div class="placeholder placeholder--card">
+                            <span>Screenshot Proyek 4</span>
+                        </div>
+                    </div>
+                    <div class="project-card__body">
+                        <div class="badges">
+                            <span class="badge badge--type">Work Assignment</span>
+                            <span class="badge badge--role">Individual</span>
+                        </div>
+                        <h3 class="project__title">Nama Proyek 4</h3>
+                        <p class="project__summary">
+                            Ringkasan singkat 1-2 kalimat tentang proyek ini.
+                        </p>
+                        <div class="project__block">
+                            <h4>Kontribusi Saya</h4>
+                            <p>Kontribusi/dampak yang Anda berikan pada proyek ini.</p>
+                        </div>
+                        <div class="project__block">
+                            <h4>Yang Saya Pelajari</h4>
+                            <p>Pembelajaran dari proyek ini.</p>
+                        </div>
+                        <div class="project__actions">
+                            <a href="#" class="btn btn--small">Lihat Proyek ↗</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 5 -->
+                <article class="project-card reveal">
+                    <div class="project-card__image">
+                        <div class="placeholder placeholder--card">
+                            <span>Screenshot Proyek 5</span>
+                        </div>
+                    </div>
+                    <div class="project-card__body">
+                        <div class="badges">
+                            <span class="badge badge--type">Self-initiated</span>
+                            <span class="badge badge--role">Group Project</span>
+                        </div>
+                        <h3 class="project__title">Nama Proyek 5</h3>
+                        <p class="project__summary">
+                            Ringkasan singkat 1-2 kalimat tentang proyek ini.
+                        </p>
+                        <div class="project__block">
+                            <h4>Peran Saya</h4>
+                            <p>Jelaskan peran Anda dalam group project ini.</p>
+                        </div>
+                        <div class="project__block">
+                            <h4>Kontribusi Saya</h4>
+                            <p>Kontribusi/dampak yang Anda berikan pada proyek ini.</p>
+                        </div>
+                        <div class="project__block">
+                            <h4>Yang Saya Pelajari</h4>
+                            <p>Pembelajaran dari proyek ini.</p>
+                        </div>
+                        <div class="project__actions">
+                            <a href="#" class="btn btn--small">Lihat Proyek ↗</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== Experience ====== -->
+    <section class="experience" id="pengalaman">
+        <div class="container">
+            <span class="section-label reveal">03 — Pengalaman</span>
+            <h2 class="reveal">Perjalanan sejauh ini</h2>
+
+            <div class="timeline">
+                <div class="timeline__item reveal">
+                    <div class="timeline__marker"></div>
+                    <div class="timeline__content">
+                        <span class="timeline__date">2024 — Sekarang</span>
+                        <h3>Posisi / Peran Anda</h3>
+                        <p class="timeline__org">Nama Organisasi atau Perusahaan</p>
+                        <p>
+                            Deskripsi singkat tentang apa yang Anda lakukan di sini.
+                            Tanggung jawab utama dan pencapaian.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline__item reveal">
+                    <div class="timeline__marker"></div>
+                    <div class="timeline__content">
+                        <span class="timeline__date">2023 — 2024</span>
+                        <h3>Posisi / Peran Sebelumnya</h3>
+                        <p class="timeline__org">Nama Organisasi</p>
+                        <p>
+                            Deskripsi singkat. Bisa berupa pengalaman organisasi
+                            kampus, magang, volunteer, atau kursus intensif.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline__item reveal">
+                    <div class="timeline__marker"></div>
+                    <div class="timeline__content">
+                        <span class="timeline__date">2022 — 2023</span>
+                        <h3>Pengalaman Lainnya</h3>
+                        <p class="timeline__org">Nama Organisasi</p>
+                        <p>
+                            Deskripsi singkat tentang pengalaman ini dan
+                            apa yang Anda dapatkan darinya.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== Contact ====== -->
+    <section class="contact" id="kontak">
+        <div class="container">
+            <span class="section-label reveal">04 — Kontak</span>
+            <h2 class="reveal">Mari terhubung</h2>
+            <p class="contact__intro reveal">
+                Tertarik untuk berdiskusi, berkolaborasi, atau sekadar ngobrol?
+                Jangan ragu untuk menghubungi saya.
+            </p>
+
+            <div class="contact__grid reveal">
+                <a href="mailto:email.anda@example.com" class="contact__card" target="_blank" rel="noopener">
+                    <span class="contact__card-label">Email</span>
+                    <span class="contact__card-value">email.anda@example.com</span>
+                </a>
+                <a href="https://linkedin.com/in/username-anda" class="contact__card" target="_blank" rel="noopener">
+                    <span class="contact__card-label">LinkedIn</span>
+                    <span class="contact__card-value">linkedin.com/in/username-anda</span>
+                </a>
+                <a href="https://github.com/jovanjopan" class="contact__card" target="_blank" rel="noopener">
+                    <span class="contact__card-label">GitHub</span>
+                    <span class="contact__card-value">github.com/jovanjopan</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== Footer ====== -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Jovan Faizan Ardiansyah. Dibuat dengan tangan dan secangkir kopi.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
