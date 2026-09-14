@@ -1049,11 +1049,12 @@ p:last-child {
 @media print {
     @page {
         margin: 1cm;
+        size: A4 portrait;
     }
     body {
         background: #fff !important;
         color: #000 !important;
-        font-size: 10pt;
+        font-size: 9pt !important; /* Slightly smaller to fit grid columns */
     }
     .nav, .footer, .btn, .gallery-nav, .gallery-dots, .section-label {
         display: none !important;
@@ -1065,14 +1066,16 @@ p:last-child {
     }
     section {
         page-break-inside: avoid;
-        padding: 1rem 0 !important;
+        padding: 0.5rem 0 !important;
         margin: 0 !important;
     }
     .project-featured {
         page-break-inside: avoid;
         border: 1px solid #ddd !important;
         box-shadow: none !important;
-        margin-bottom: 2rem !important;
+        margin-bottom: 1.5rem !important;
+        padding: 1rem !important;
+        align-items: center !important;
     }
     .project-gallery__item {
         display: none !important;
@@ -1081,21 +1084,22 @@ p:last-child {
         display: block !important;
     }
     .project-gallery__item img {
-        /* Let images scale naturally within their grid columns */
+        /* Constrain images aggressively so they don't break the A4 height */
         width: 100% !important;
         height: auto !important;
-        max-height: 400px !important;
+        max-height: 200px !important;
         object-fit: contain !important;
         display: block !important;
     }
     .project-featured__body {
-        padding: 1.5rem !important;
+        padding: 0 !important;
     }
     .timeline__item {
         page-break-inside: avoid;
     }
     .contact__grid {
-        display: block !important;
+        display: flex !important;
+        gap: 1rem !important;
     }
     .contact__card {
         border: none !important;
@@ -1104,6 +1108,8 @@ p:last-child {
         margin-bottom: 0.5rem !important;
     }
     .about__photo {
-        transform: none !important; /* Remove rotation for clean print */
+        transform: none !important;
+        max-width: 200px !important; /* Prevent the photo from dominating the page */
+        margin: 0 auto !important;
     }
 }
