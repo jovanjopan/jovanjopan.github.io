@@ -1076,7 +1076,21 @@ p:last-child {
         display: block !important; /* disable grid/flex layout to prevent breaking */
     }
     .project-featured__image {
-        display: none !important; /* Hide massive images in PDF to save space and make it resume-like, or we can keep just the first one */
+        display: block !important;
+        margin-bottom: 1rem !important;
+    }
+    .project-gallery__item {
+        display: none !important; /* Hide all images by default in PDF */
+    }
+    .project-gallery__item:first-child {
+        display: block !important; /* Only show the very first image */
+    }
+    .project-gallery__item img {
+        max-height: 250px !important; /* Limit size so it fits nicely on paper */
+        width: auto !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        display: block !important;
     }
     .project-featured__body {
         padding: 1.5rem !important;
