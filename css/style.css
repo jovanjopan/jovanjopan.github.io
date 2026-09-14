@@ -1048,12 +1048,12 @@ p:last-child {
 /* ====== 13. Print Styles (Export to PDF) ====== */
 @media print {
     @page {
-        margin: 1.5cm;
+        margin: 1cm;
     }
     body {
         background: #fff !important;
         color: #000 !important;
-        font-size: 11pt;
+        font-size: 10pt;
     }
     .nav, .footer, .btn, .gallery-nav, .gallery-dots, .section-label {
         display: none !important;
@@ -1073,23 +1073,19 @@ p:last-child {
         border: 1px solid #ddd !important;
         box-shadow: none !important;
         margin-bottom: 2rem !important;
-        display: block !important; /* disable grid/flex layout to prevent breaking */
-    }
-    .project-featured__image {
-        display: block !important;
-        margin-bottom: 1rem !important;
     }
     .project-gallery__item {
-        display: none !important; /* Hide all images by default in PDF */
+        display: none !important;
     }
     .project-gallery__item:first-child {
-        display: block !important; /* Only show the very first image */
+        display: block !important;
     }
     .project-gallery__item img {
-        max-height: 250px !important; /* Limit size so it fits nicely on paper */
-        width: auto !important;
-        max-width: 100% !important;
-        margin: 0 auto !important;
+        /* Let images scale naturally within their grid columns */
+        width: 100% !important;
+        height: auto !important;
+        max-height: 400px !important;
+        object-fit: contain !important;
         display: block !important;
     }
     .project-featured__body {
@@ -1107,10 +1103,7 @@ p:last-child {
         padding: 0 !important;
         margin-bottom: 0.5rem !important;
     }
-    .about__grid {
-        display: block !important;
-    }
     .about__photo {
-        display: none !important;
+        transform: none !important; /* Remove rotation for clean print */
     }
 }
