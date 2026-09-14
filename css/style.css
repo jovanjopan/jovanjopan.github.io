@@ -1049,12 +1049,11 @@ p:last-child {
 @media print {
     @page {
         margin: 1cm;
-        size: A4 portrait;
+        /* Dihapus: 'size: A4 portrait;' agar Anda bisa bebas memilih Landscape di menu Print */
     }
     body {
         background: #fff !important;
         color: #000 !important;
-        font-size: 9pt !important; /* Slightly smaller to fit grid columns */
     }
     .nav, .footer, .btn, .gallery-nav, .gallery-dots, .section-label {
         display: none !important;
@@ -1066,16 +1065,14 @@ p:last-child {
     }
     section {
         page-break-inside: avoid;
-        padding: 0.5rem 0 !important;
+        padding: 1rem 0 !important;
         margin: 0 !important;
     }
     .project-featured {
         page-break-inside: avoid;
         border: 1px solid #ddd !important;
         box-shadow: none !important;
-        margin-bottom: 1.5rem !important;
-        padding: 1rem !important;
-        align-items: center !important;
+        margin-bottom: 2rem !important;
     }
     .project-gallery__item {
         display: none !important;
@@ -1084,22 +1081,17 @@ p:last-child {
         display: block !important;
     }
     .project-gallery__item img {
-        /* Constrain images aggressively so they don't break the A4 height */
         width: 100% !important;
         height: auto !important;
-        max-height: 200px !important;
+        max-height: 400px !important; /* Dikembalikan menjadi besar */
         object-fit: contain !important;
         display: block !important;
     }
     .project-featured__body {
-        padding: 0 !important;
+        padding: 1.5rem !important;
     }
     .timeline__item {
         page-break-inside: avoid;
-    }
-    .contact__grid {
-        display: flex !important;
-        gap: 1rem !important;
     }
     .contact__card {
         border: none !important;
@@ -1109,7 +1101,6 @@ p:last-child {
     }
     .about__photo {
         transform: none !important;
-        max-width: 200px !important; /* Prevent the photo from dominating the page */
-        margin: 0 auto !important;
+        /* Batasan dikecilkan (max-width) dihapus agar foto kembali besar */
     }
 }
